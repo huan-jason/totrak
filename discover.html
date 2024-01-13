@@ -20,21 +20,35 @@
     padding: 0.5em 1em;
     border-radius: 0.25em;
   }
+
+  @media (max-width: 768px) {
+    #discover-page {
+      padding-top: 2rem;
+    }
+    #discover-page > img {
+      width: 80%;
+      margin-inline: auto;
+    }
+    #discover-page--text {
+      line-height: 1.3em;
+      max-width: 30ch;
+    }
+  }
 </style>
 
 
 <section id="discover-page" class="page-section">
 
-<img src="/img/discover_totrak.jpg">
+  <img src="/img/discover_totrak.jpg">
 
-<div id="discover-page--text">
-  Our wide range of small IoT sensors connect directly to the cloud and provide tracking
-  across land, sea, and air. Sensors can be placed in boxes, specialty packaging, pallets,
-  containers, or trailers.
-</div>
+  <div id="discover-page--text">
+    Our wide range of small IoT sensors connect directly to the cloud and provide tracking
+    across land, sea, and air. Sensors can be placed in boxes, specialty packaging, pallets,
+    containers, or trailers.
+  </div>
 
-<a id="discover-page--brochure-download" href="totrak_brochure.pdf" download>
-    Download our product brochure
-</a>
+  <a id="discover-page--brochure-download" href="totrak_brochure.pdf" download>
+      Download our product brochure
+  </a>
 
 </section>

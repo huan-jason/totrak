@@ -1,4 +1,8 @@
 <style>
+  #home-page-mobile {
+    display: none;
+  }
+
   #home-page {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -29,41 +33,47 @@
     grid-template-rows: auto 1fr;
   }
 
-  #home-page-message {
+  #home-page--message {
     text-align: right;
     margin-block: auto 2rem;
     margin-right: 4rem;
   }
-  #home-page-message--header {
+  #home-page--message__header {
     font-size: 3rem;
     line-height: 1.3em;
     font-weight: bold;
+    max-width: 25ch;
+    text-wrap: balance;
     margin-bottom: 0.5em;
+    margin-left: auto
   }
-  #home-page-message--text {
-      font-size: 1.5rem;
-      line-height: 1.6em;
-      color: var(--gray-6);
-      margin-bottom: 2.5em;
+  #home-page--message__text {
+    font-size: 1.5rem;
+    line-height: 1.6em;
+    color: var(--gray-6);
+    max-width: 25ch;
+    text-wrap: balance;
+    margin-bottom: 2.5em;
+    margin-left: auto
   }
 
-  #home-page-nav {
-      display: flex;
-      flex-direction: row;
-      gap: 2em;
-      justify-content: end;;
-      font-size: 1rem;
-      margin-top: 2em;;
-      margin-right: 4em;
+  #home-page--nav {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    justify-content: end;;
+    font-size: 1rem;
+    margin-top: 2em;;
+    margin-right: 4em;
   }
-  #home-page-nav a {
-      color: white;
-      text-decoration: none;
-      padding: 0.5em 1em;
+  #home-page--nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
   }
-  #home-page-nav--register {
-      background: rgb(50, 118, 249);
-      color: rgb(27, 27, 27);
+  #home-page--nav__register {
+    background: rgb(50, 118, 249);
+    color: rgb(27, 27, 27);
   }
 </style>
 
@@ -78,23 +88,20 @@
 
   <div id="home-page--right-pane">
 
-    <div id="home-page-nav">
+    <div id="home-page--nav">
         <a href="#brochure">Brochure</a>
         <a href="#contact-us">Contact us</a>
-        <a href="#register-page" id="home-page-nav--register">Register</a>
+        <a href="#register-page" id="home-page--nav__register">Register</a>
     </div>
 
-    <div id="home-page-message">
-        <div id="home-page-message--header">
-            <div>Track your goods</div>
-            <div>and equipment</div>
-            <div>anytime, anywhere</div>
+    <div id="home-page--message">
+        <div id="home-page--message__header">
+          Track your goods and equipment anytime, anywhere
         </div>
 
-        <div id="home-page-message--text">
-            <div>Gain visibility on location,</div>
-            <div>temperature, tampering, and</div>
-            <div>more over land, air, and sea</div>
+        <div id="home-page--message__text">
+            Gain visibility on location, temperature, tampering, and
+            more over land, air, and sea
         </div>
     </div>
 

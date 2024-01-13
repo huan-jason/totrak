@@ -39,8 +39,13 @@
 
 <body hx-swap="outerHTML">
 
-<section id="home-page" class="page-section"
+  <section id="home-page" class="page-section"
   hx-get="home.html"
+  hx-trigger="load"
+></section>
+
+<section id="home-page-mobile" class="page-section"
+  hx-get="home-mobile.html"
   hx-trigger="load"
 ></section>
 

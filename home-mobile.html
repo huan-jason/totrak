@@ -1,0 +1,86 @@
+<style>
+  @media (max-width: 768px) {
+    #home-page {
+      display: none;
+    }
+    #home-page-mobile {
+      display: block;
+      color: white;
+    }
+
+    #home-page-mobile--container {
+      position: relative;
+      text-align: center;
+      background-image: url("/img/home.jpg");
+      padding-block: 3rem;
+
+    }
+    #home-page-mobile--img__totrak {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+    }
+
+    #home-page-mobile--message__header {
+      font-size: 1.75rem;
+      max-width: 25ch;
+      margin-inline: auto;
+      margin-block: 1em;
+      line-height: 1.3em;
+    }
+    #home-page-mobile--message__text {
+        font-size: 1.5rem;
+        line-height: 1.4em;
+        color: var(--gray-6);
+        width: 30ch;
+        margin-inline: auto;
+        text-align: center;
+        margin-top: 2em;
+        color: var(--gray-7);
+    }
+
+    #home-page-mobile--nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        justify-content: end;;
+        font-size: 1.25rem;
+      }
+      #home-page-mobile--nav a {
+        color: white;
+        text-decoration: none;
+        width: 10ch;
+        margin-inline: auto;
+        padding: 0.5em 1em;
+    }
+    #home-page-mobile--nav__register {
+        background: rgb(50, 118, 249);
+        color: rgb(27, 27, 27);
+    }
+  }
+</style>
+
+
+<section id="home-page-mobile" class="page-section">
+
+    <div id="home-page-mobile--container">
+
+      <img id="home-page-mobile--img__totrak-logo" src="/img/totrak_logo.svg" />
+
+      <div id="home-page-mobile--message__header">
+          Track your goods and equipment anytime, anywhere
+      </div>
+
+      <div id="home-page-mobile--nav">
+          <a href="#brochure">Brochure</a>
+          <a href="#contact-us">Contact us</a>
+          <a href="#register-page" id="home-page-mobile--nav__register">Register</a>
+      </div>
+
+    </div>
+
+    <div id="home-page-mobile--message__text">
+      Gain visibility on location, temperature, tampering, and more over land, air, and sea
+    </div>
+
+</section>
