@@ -1,0 +1,103 @@
+<style>
+  #home-page {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background-color: rgb(9, 25, 57);
+      color: white;
+  }
+
+  #home-page--img__totrak-logo {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 10rem;
+  }
+
+  #home-page--img__home {
+    width: 100%;
+    max-height: 100vh;
+    aspect-ratio: 631 / 759;
+  }
+  #home-page--img__totrak {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+  }
+
+  #home-page--right-pane {
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+
+  #home-page-message {
+    text-align: right;
+    margin-block: auto 2rem;
+    margin-right: 4rem;
+  }
+  #home-page-message--header {
+    font-size: 3rem;
+    line-height: 1.3em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  #home-page-message--text {
+      font-size: 1.5rem;
+      line-height: 1.6em;
+      color: var(--gray-6);
+      margin-bottom: 2.5em;
+  }
+
+  #home-page-nav {
+      display: flex;
+      flex-direction: row;
+      gap: 2em;
+      justify-content: end;;
+      font-size: 1rem;
+      margin-top: 2em;;
+      margin-right: 4em;
+  }
+  #home-page-nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5em 1em;
+  }
+  #home-page-nav--register {
+      background: rgb(50, 118, 249);
+      color: rgb(27, 27, 27);
+  }
+</style>
+
+
+<section id="home-page" class="page-section">
+
+  <div id="home-page--left-pane">
+    <img id="home-page--img__home" src="/img/home.jpg" />
+    <img id="home-page--img__totrak-logo" src="/img/totrak_logo.svg" />
+  </div>
+
+
+  <div id="home-page--right-pane">
+
+    <div id="home-page-nav">
+        <a href="#brochure">Brochure</a>
+        <a href="#contact-us">Contact us</a>
+        <a href="#register-page" id="home-page-nav--register">Register</a>
+    </div>
+
+    <div id="home-page-message">
+        <div id="home-page-message--header">
+            <div>Track your goods</div>
+            <div>and equipment</div>
+            <div>anytime, anywhere</div>
+        </div>
+
+        <div id="home-page-message--text">
+            <div>Gain visibility on location,</div>
+            <div>temperature, tampering, and</div>
+            <div>more over land, air, and sea</div>
+        </div>
+    </div>
+
+  </div>
+
+</section>
