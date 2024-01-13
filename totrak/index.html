@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ToTrak</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/open-props"/>
+
+  <style>
+      html {
+          scroll-behavior: smooth;
+      }
+      body {
+          margin: 0;
+          font-family: sans-serif;
+      }
+      .input-required::before {
+          content: '* ';
+          color: red;
+      }
+      .text-right {
+        text-align: right;
+      }
+      .user-select-none {
+          user-select: none;
+      }
+      .w-100 {
+          width: 100%;
+      }
+
+
+      .page-section {
+          position: relative;
+      }
+
+
+      /* home page */
+      #home-page {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          background-color: rgb(9, 25, 57);
+          color: white;
+      }
+
+      #home-page--img__totrak-logo {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        width: 10rem;
+      }
+
+      #home-page--img__home {
+        width: 100%;
+        max-height: 100vh;
+        aspect-ratio: 631 / 759;
+      }
+      #home-page--img__totrak {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+      }
+
+      #home-page--right-pane {
+        display: grid;
+        grid-template-rows: auto 1fr;
+      }
+
+      #home-page-message {
+        text-align: right;
+        margin-block: auto 2rem;
+        margin-right: 4rem;
+      }
+      #home-page-message--header {
+        font-size: 3rem;
+        line-height: 1.3em;
+        font-weight: bold;
+        margin-bottom: 0.5em;
+      }
+      #home-page-message--text {
+          font-size: 1.5rem;
+          line-height: 1.6em;
+          color: var(--gray-6);
+          margin-bottom: 2.5em;
+      }
+
+      #home-page-nav {
+          display: flex;
+          flex-direction: row;
+          gap: 2em;
+          justify-content: end;;
+          font-size: 1rem;
+          margin-top: 2em;;
+          margin-right: 4em;
+      }
+      #home-page-nav a {
+          color: white;
+          text-decoration: none;
+          padding: 0.5em 1em;
+      }
+      #home-page-nav--register {
+          background: rgb(50, 118, 249);
+          color: rgb(27, 27, 27);
+      }
+
+
+      /* discover page */
+      #discover-page {
+        text-align: center;
+        user-select: none;
+        padding-block: 3rem;
+      }
+      #discover-page--text {
+        font-size: 1.5rem;
+        line-height: 1.6em;
+        color: var(--gray-7);
+        max-width: 30em;
+        margin-inline: auto;
+        margin-block: 1.5em;
+      }
+      #discover-page--brochure-download {
+        font-size: 1rem;
+        background-color: #3276F9;
+        color: white;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        border-radius: 0.25em;
+      }
+
+
+      /* why-totrak-page */
+      #why-totrak-page {
+        display: grid;
+        grid-template-columns: repeat(3, 33.33%);
+        background-color: #091939;
+      }
+      #why-totrak-page img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100vh;
+        aspect-ratio: 480 / 873;
+      }
+      .why-totrak-page--img-label {
+        position: absolute;
+        bottom: 3rem;
+        width: 33vw;
+        font-size: 3rem;
+        color: var(--gray-3);
+        margin-left: 0.75em;
+        margin-bottom: 1em;
+      }
+      #why-totrak-page--asset-tracking-img {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+      }
+      #why-totrak-page--label__asset-tracking {
+        width: 10ch;
+      }
+      .why-totrak-page--container:hover * {
+        color: white;
+      }
+
+
+      /* register-page */
+      #register-page {
+        background-color: #1d2146;
+      }
+      #enquiry-form {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #1d2146;
+          color: white;
+          width: fit-content;
+          margin-inline: auto;
+          padding: 2em 3em;
+          border-radius: 0.5em;
+      }
+      .enquiry-form--header,
+      .enquiry-form--text {
+          text-align: center;
+          line-height: 1.5em;
+      }
+      .enquiry-form--header {
+          margin-bottom: 0.5em;;
+          font-size: 1.5em;
+      }
+      .enquiry-form--text {
+          opacity: 0.6;
+          font-size: 1.25em;
+      }
+      #enquiry-form-input-1col-container {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          column-gap: 1.5em;
+      }
+      #enquiry-form-input-2cols-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: 1.5em;
+          margin-top: 1em;
+      }
+      #enquiry-form input {
+          width: clamp(10ch, 40ch, 20vw);
+          padding: 0.5em 1em;
+      }
+      #enquiry-form label {
+          display: block;
+          font-size: 0.75rem;
+          margin-bottom: 0.5em;
+          margin-top: 1.5em;
+      }
+      #enquiry-form--input-enquiry {
+          width: 96% !important;
+      }
+      #enquiry-form--submit-button {
+          background-color: #5fbae7;
+          margin-top: 2.5em;
+          padding-block: 0.5em;
+          width: 100%;
+      }
+
+
+      /* contact-us-page */
+      #contact-us-page {
+          background-color: #1d2146;
+          color: darkgray;
+          padding: 2em 3em;
+          font-size: 1.5em;
+      }
+      #contact-us-page a {
+        text-decoration: none;
+        color: darkgray;
+      }
+      #contact-us--header {
+          color: white;
+          font-weight: bold;
+      }
+      #contact-us--email {
+          margin-block: 1.5em;
+      }
+      #contact-us--tnc {
+          text-align: center;
+          margin-top: 3em;
+      }
+  </style>
+</head>
+
+
+
+<body>
+
+<section id="home-page" class="page-section">
+
+    <div id="home-page--left-pane">
+      <img id="home-page--img__home" src="/img/home.jpg" />
+      <img id="home-page--img__totrak-logo" src="/img/totrak_logo.svg" />
+    </div>
+
+
+    <div id="home-page--right-pane">
+
+      <div id="home-page-nav">
+          <a href="#brochure">Brochure</a>
+          <a href="#contact-us">Contact us</a>
+          <a href="#register-page" id="home-page-nav--register">Register</a>
+      </div>
+
+      <div id="home-page-message">
+          <div id="home-page-message--header">
+              <div>Track your goods</div>
+              <div>and equipment</div>
+              <div>anytime, anywhere</div>
+          </div>
+
+          <div id="home-page-message--text">
+              <div>Gain visibility on location,</div>
+              <div>temperature, tampering, and</div>
+              <div>more over land, air, and sea</div>
+          </div>
+      </div>
+
+</section>
+
+
+
+<section id="discover-page" class="page-section">
+    <img src="/img/discover_totrak.jpg">
+
+    <div id="discover-page--text">
+      Our wide range of small IoT sensors connect directly to the cloud and provide tracking
+      across land, sea, and air. Sensors can be placed in boxes, specialty packaging, pallets,
+      containers, or trailers.
+    </div>
+
+    <a id="discover-page--brochure-download" href="totrak_brochure.pdf" download>
+        Download our product brochure
+    </a>
+</section>
+
+
+
+<section id="why-totrak-page" class="page-section">
+  <div class="why-totrak-page--container">
+    <img src="img/cold_chain_monitoring.jpg">
+    <div class="why-totrak-page--img-label">Cold Chain Monitoring</div>
+  </div>
+
+  <div class="why-totrak-page--container">
+    <img src="img/live_shipment_monitoring.jpg">
+    <div class="why-totrak-page--img-label">Live Shipment Monitoring</div>
+  </div>
+
+  <div class="why-totrak-page--container">
+    <img src="img/asset_tracking.jpg" id="why-totrak-page--asset-tracking-img">
+    <div id="why-totrak-page--label__asset-tracking" class="why-totrak-page--img-label">Asset Tracking</div>
+  </div>
+</section>
+
+
+
+
+<section id="register-page" class="page-section">
+    <img src="img/form_background_totrak.jpg" class="w-100">
+
+    <form id="enquiry-form">
+        <div class="enquiry-form--header">Want to be kept in the loop?</div>
+        <div class="enquiry-form--text">Drop us an enquiry and and we will get back to you asap.</div>
+
+        <div id="enquiry-form-input-2cols-container">
+            <div>
+                <label class="input-required">Name</label>
+                <input name="name">
+            </div>
+            <div>
+                <label class="input-required">Company name</label>
+                <input name="compant">
+            </div>
+            <div>
+                <label class="input-required">Email address</label>
+                <input name="email" type="email">
+            </div>
+            <div>
+                <label class="input-required">Industry</label>
+                <input name="industry">
+            </div>
+        </div>
+
+        <div id="enquiry-form-input-1col-container">
+            <div>
+                <label>Nature of enquiry</label>
+                <input name="enquiry" id="enquiry-form--input-enquiry">
+            </div>
+
+            <button id="enquiry-form--submit-button" type="submit">
+                Submit
+            </button>
+        </div>
+    </form>
+</section>
+
+
+
+<section id="contact-us-page" class="page-section">
+    <div id="contact-us--header">Contact us</div>
+    <div id="contact-us--email"><a href="mailto:placeholder@email.com" target="_blank">
+        placeholder@email.com
+    </a></div>
+    <a href="https://www.google.com/maps/place/Toll+City/@1.3140319,103.6549263,17z/data=!3m1!4b1!4m6!3m5!1s0x31da05eb64db273b:0xef49bfce3e4e3eea!8m2!3d1.3140319!4d103.6575012!16s%2Fg%2F11c30sfcf8?entry=ttu"
+      target="_blank"
+    >
+      <div id="contact-us--address">
+          <div>Toll City</div>
+          <div>6- Pioneer Road,</div>
+          <div>Singapore 628509</div>
+      </div>
+    </a>
+
+    <div class="text-right">
+      <img src="/img/totrak_logo.svg" />
+    </div>
+
+    <div id="contact-us--tnc">Terms and conditions | Privacy Policy | © Totrak 2023</div>
+</section>
+
+</body>
+</html>
