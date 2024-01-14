@@ -8,11 +8,17 @@
       color: white;
     }
 
+    #home-page--img {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+
     #home-page-mobile--container {
       position: relative;
       text-align: center;
-      background-image: url("/img/home.jpg");
       padding-block: 3rem;
+      overflow: hidden;
 
     }
     #home-page-mobile--img__totrak {
@@ -65,6 +71,8 @@
 
     <div id="home-page-mobile--container">
 
+      <img id="home-page--img" src="/img/home.jpg" />
+
       <img id="home-page-mobile--img__totrak-logo" src="img/totrak_logo.svg" />
 
       <div id="home-page-mobile--message__header">
@@ -79,8 +87,11 @@
 
     </div>
 
+
     <div id="home-page-mobile--message__text">
       Gain visibility on location, temperature, tampering, and more over land, air, and sea
     </div>
+
+
 
 </section>
