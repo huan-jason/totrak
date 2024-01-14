@@ -27,10 +27,6 @@
       opacity: 0.6;
       font-size: 1.25em;
   }
-  #enquiry-form-input-1col-container {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-  }
   #enquiry-form-input-2cols-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -48,19 +44,27 @@
       margin-top: 1.5em;
   }
   #enquiry-form--input-enquiry {
-    width: calc(100% - 2.3em) !important;
+    width: 100% !important;
   }
   #enquiry-form--submit-button {
       background-color: #5fbae7;
       margin-top: 2.5em;
       padding-block: 0.5em;
-      width: 100%;
+      width: 100% !important;
   }
 
   @media (max-width: 768px) {
     #register-page > img {
         height: 100vh;
     }
+    #enquiry-form-input-2cols-container {
+      grid-template-columns: repeat(1, 1fr);
+      padding-right: 2em;
+    }
+    #enquiry-form input {
+      width: 100%;
+      padding: 0.5em 1em;
+  }
   }
 </style>
 
@@ -92,14 +96,15 @@
     </div>
 
     <div id="enquiry-form-input-1col-container">
-      <div>
-          <label>Nature of enquiry</label>
-          <input name="enquiry" id="enquiry-form--input-enquiry">
-      </div>
 
-      <button id="enquiry-form--submit-button" type="submit">
-          Submit
-      </button>
+        <div style="padding-right: 2em">
+            <label>Nature of enquiry</label>
+            <input name="enquiry" id="enquiry-form--input-enquiry">
+        </div>
+
+        <button id="enquiry-form--submit-button" type="submit">
+            Submit
+        </button>
     </div>
 
   </form>

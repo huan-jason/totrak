@@ -31,6 +31,13 @@
     .page-section {
         position: relative;
     }
+
+    #chatbot {
+      position: sticky;
+      bottom: 2rem;
+      left: 91%;
+      opacity: 0.75;
+    }
   </style>
 
   <script src="https://unpkg.com/htmx.org@1.9.10"></script>
@@ -68,6 +75,8 @@
   hx-get="contact-us.html"
   hx-trigger="load"
 ></section>
+
+<img id="chatbot" src="/img/chatbot.png" />
 
 </body>
 </html>
