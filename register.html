@@ -30,7 +30,6 @@
   #enquiry-form-input-1col-container {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
-      column-gap: 1.5em;
   }
   #enquiry-form-input-2cols-container {
       display: grid;
@@ -39,7 +38,7 @@
       margin-top: 1em;
   }
   #enquiry-form input {
-      width: clamp(10ch, 40ch, 20vw);
+      width: clamp(10ch, 20vw, 20vw);
       padding: 0.5em 1em;
   }
   #enquiry-form label {
@@ -49,7 +48,7 @@
       margin-top: 1.5em;
   }
   #enquiry-form--input-enquiry {
-      width: 96% !important;
+    width: calc(100% - 2.3em) !important;
   }
   #enquiry-form--submit-button {
       background-color: #5fbae7;
