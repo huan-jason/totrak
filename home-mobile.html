@@ -1,5 +1,5 @@
 <style>
-  @media (max-width: 768px) {
+  @media (max-width: 879px) {
     #home-page {
       display: none;
     }
@@ -12,6 +12,7 @@
       position: absolute;
       inset: 0;
       z-index: -1;
+      width: 100%;
     }
 
     #home-page-mobile--container {
@@ -25,6 +26,9 @@
       position: absolute;
       top: 2rem;
       left: 2rem;
+    }
+    #home-page-mobile--img__totrak-logo {
+      width: 10rem;
     }
 
     #home-page-mobile--message__header {
@@ -63,6 +67,13 @@
         background: rgb(50, 118, 249);
         color: rgb(27, 27, 27);
     }
+    #home-page-mobile--nav a:hover {
+      color: var(--blue-6);
+    }
+    #home-page-mobile--nav__register:hover {
+      color: var(--blue-12) !important;
+    }
+
   }
 </style>
 
@@ -73,7 +84,7 @@
 
       <img id="home-page--img" src="img/home.jpg" />
 
-      <img id="home-page-mobile--img__totrak-logo" src="img/totrak_logo.svg" />
+      <img id="home-page-mobile--img__totrak-logo" src="img/totrak_logo.png" />
 
       <div id="home-page-mobile--message__header">
           Track your goods and equipment anytime, anywhere

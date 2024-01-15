@@ -4,7 +4,7 @@
     grid-template-columns: repeat(3, 33.33%);
     background-color: #091939;
   }
-  #why-totrak-page img {
+  .why-totrak-page--img {
     width: 100%;
     max-width: 100%;
     max-height: 100vh;
@@ -40,11 +40,11 @@
   }
   #why-totrak-page--logo {
     position: absolute;
-    top: -3.5rem;
-    margin-left: 0.5rem;;
+    top: -1rem;
+    width: 8rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 879px) {
     .why-totrak-page--img-label {
       font-size: 1.5rem;
       margin-bottom: 0;
@@ -55,22 +55,22 @@
 
 <section id="why-totrak-page" class="page-section">
 <div class="why-totrak-page--container">
-  <img src="img/cold_chain_monitoring.jpg">
+  <img class="why-totrak-page--img" src="img/cold_chain_monitoring.jpg">
   <div class="why-totrak-page--img-label">Cold Chain Monitoring</div>
   <div id="why-totrak-text-container">
     <span id="why-totrak-page--text">WHY</span>
-    <span><img id="why-totrak-page--logo" src="img/totrak_logo.svg" /></span>
+    <span><img id="why-totrak-page--logo" src="img/totrak_logo.png" /></span>
   </div>
 
 </div>
 
 <div class="why-totrak-page--container">
-  <img src="img/live_shipment_monitoring.jpg">
+  <img class="why-totrak-page--img" src="img/live_shipment_monitoring.jpg">
   <div class="why-totrak-page--img-label">Live Shipment Monitoring</div>
 </div>
 
 <div class="why-totrak-page--container">
-  <img src="img/asset_tracking.jpg" id="why-totrak-page--asset-tracking-img">
+  <img class="why-totrak-page--img" src="img/asset_tracking.jpg" id="why-totrak-page--asset-tracking-img">
   <div id="why-totrak-page--label__asset-tracking" class="why-totrak-page--img-label">Asset Tracking</div>
 </div>
 </section>

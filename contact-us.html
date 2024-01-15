@@ -20,11 +20,20 @@
       text-align: center;
       padding-block: 3em 1em;
   }
+  #contact-us--totrak-logo{
+    position: absolute;
+    bottom: 1em;
+    right: 0;
+    width: 5rem;
+  }
 
-  @media (max-width: 768px) {
+  @media (max-width: 879px) {
     #contact-us-page {
       padding: 1em 1.5em;
       font-size: 1em;
+    }
+    #contact-us--totrak-logo{
+      display: none;
     }
   }
 </style>
@@ -40,14 +49,14 @@
   >
     <div id="contact-us--address">
         <div>Toll City</div>
-        <div>6- Pioneer Road,</div>
+        <div>60 Pioneer Road,</div>
         <div>Singapore 628509</div>
     </div>
   </a>
 
-  <div class="text-right">
-    <img src="img/totrak_logo.svg" />
+  <div class="position-relative">
+    <div id="contact-us--tnc">Terms and conditions | Privacy Policy | © Totrak 2023</div>
+    <img  id="contact-us--totrak-logo" src="img/totrak_logo.png" />
   </div>
 
-  <div id="contact-us--tnc">Terms and conditions | Privacy Policy | © Totrak 2023</div>
 </section>
