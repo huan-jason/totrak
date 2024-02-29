@@ -10,6 +10,7 @@ services:
       - db
     depends_on:
       - db
+    entrypoint: ["python", "-m", "http.server"]
 
   db:
     image: postgres:15
